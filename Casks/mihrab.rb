@@ -17,6 +17,31 @@ cask "mihrab" do
 
   app "Mihrab.app"
 
+  # Restart the widget daemon after the app is replaced.
+  #
+  # WidgetKit archives each widget's timeline AND its gallery preview to
+  # disk, and chronod validates those archives against the bundle they were
+  # produced by. Replacing the app in place invalidates that check: every
+  # reload then fails with
+  #
+  #   bundleStubNotSupported("Bundle version did not match;
+  #                           LaunchServices DB may need to be rebuilt")
+  #
+  # and it does not recover — retries were observed being pushed out an
+  # hour, then a full day, while every card kept drawing the last archive
+  # that validated. Measured on 2026-08-28: widgets and previews frozen at
+  # the moment of the previous upgrade, still frozen a day later.
+  #
+  # `lsregister -f -R` was tried and does NOT clear it, despite what the
+  # message suggests. Restarting chronod does, immediately. It is a per-user
+  # launchd agent, comes straight back, and the only visible effect is the
+  # widgets redrawing — which is the point.
+  postflight do
+    system_command "/usr/bin/killall",
+                   args: ["chronod"],
+                   must_succeed: false
+  end
+
   zap trash: [
     "~/Library/Containers/maccatalyst.com.hassan.prayerapp",
   ]

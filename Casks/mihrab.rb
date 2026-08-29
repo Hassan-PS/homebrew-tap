@@ -1,6 +1,6 @@
 cask "mihrab" do
   version "2.13.3"
-  sha256 "60bf1a31a1fc347734515dde156a65054d59ad91ecfc5c00f724fc790b4084cb"
+  sha256 "a3ff0f9618072a50781fa3b2032c407108d8b1668b14829e376c5c7dbe8b6c27"
 
   url "https://github.com/Hassan-PS/Mihrab/releases/download/v#{version}/Mihrab-macOS-#{version}.zip"
   name "Mihrab"
@@ -110,9 +110,14 @@ cask "mihrab" do
 
   zap trash: "~/Library/Containers/maccatalyst.com.hassan.prayerapp"
 
+  # No Gatekeeper caveat any more. It used to say "if the release is not
+  # notarized yet, macOS may block the first launch - right-click Mihrab.app
+  # and choose Open once", which was true of 2.11.0 through 2.13.3 and is
+  # not true of anything shipped since: notarization happens inside
+  # build-catalyst.sh, and both release.sh and verify-release.sh refuse a
+  # build whose zip has no stapled ticket.
   caveats <<~EOS
     Mihrab for Mac is the same app as the iPad version, built with Mac
-    Catalyst. If the release is not notarized yet, macOS may block the
-    first launch - right-click Mihrab.app and choose Open once.
+    Catalyst.
   EOS
 end

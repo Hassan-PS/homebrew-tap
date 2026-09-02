@@ -1,6 +1,6 @@
 cask "mihrab" do
-  version "2.13.8"
-  sha256 "dbe408c3d77b8094c773cc91c791c44ee27fe11f0c773177b350ce4e2e26f95e"
+  version "2.14.0"
+  sha256 "73f9a5eaf20b0d4d1ebd19300a3ae4349fb983867952a996c87f1154865be4fa"
 
   url "https://github.com/Hassan-PS/Mihrab/releases/download/v#{version}/Mihrab-macOS-#{version}.zip"
   name "Mihrab"

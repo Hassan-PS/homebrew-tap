@@ -4,7 +4,7 @@ A Homebrew tap for **Mihrab** — a free, open-source prayer times app for macOS
 with no ads, no analytics and no tracking.
 
 ```sh
-brew install --cask hassan-ps/tap/mihrab
+brew install --cask mihrabhq/tap/mihrab
 ```
 
 That one command installs and updates the app; `brew upgrade` keeps it current,

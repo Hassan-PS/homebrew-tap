@@ -2,10 +2,10 @@ cask "mihrab" do
   version "2.27.0"
   sha256 "ffb4fd0e00a2a1429c960aa6db7bf8aa3e1e6b92a76e49bb8dbebf30b970994f"
 
-  url "https://github.com/Hassan-PS/Mihrab/releases/download/v#{version}/Mihrab-macOS-#{version}.zip"
+  url "https://github.com/MihrabHQ/Mihrab/releases/download/v#{version}/Mihrab-macOS-#{version}.zip"
   name "Mihrab"
   desc "Prayer times, Quran, and daily worship tools - private by design"
-  homepage "https://github.com/Hassan-PS/Mihrab"
+  homepage "https://github.com/MihrabHQ/Mihrab"
 
   livecheck do
     url :url

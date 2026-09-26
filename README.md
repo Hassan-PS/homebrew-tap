@@ -25,7 +25,7 @@ not a companion:
 - **Duas, tasbih, and a fasting and prayer journal.**
 
 No ads, no analytics SDK, no crash reporter, no account, and nothing to buy.
-The app is [AGPL-3.0-or-later](https://github.com/Hassan-PS/Mihrab/blob/main/LICENSE)
+The app is [AGPL-3.0-or-later](https://github.com/MihrabHQ/Mihrab/blob/main/LICENSE)
 and builds from one public repository.
 
 ## Elsewhere
@@ -33,7 +33,7 @@ and builds from one public repository.
 Android and iOS ship the same app from the same `main` branch:
 
 - [Website](https://mihrab.elghamri.se/)
-- [Source](https://github.com/Hassan-PS/Mihrab) · [Releases](https://github.com/Hassan-PS/Mihrab/releases)
+- [Source](https://github.com/MihrabHQ/Mihrab) · [Releases](https://github.com/MihrabHQ/Mihrab/releases)
 - [F-Droid](https://f-droid.org/packages/com.prayer_times/) — built and signed by
   F-Droid, with no Google Play Services
 - [Google Play](https://play.google.com/store/apps/details?id=com.prayer_times) ·
@@ -46,5 +46,5 @@ brew uninstall --cask mihrab
 ```
 
 Problems with the app itself belong in the
-[Mihrab issue tracker](https://github.com/Hassan-PS/Mihrab/issues); problems
+[Mihrab issue tracker](https://github.com/MihrabHQ/Mihrab/issues); problems
 with the cask can go here.
